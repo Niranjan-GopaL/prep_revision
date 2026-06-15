@@ -1,0 +1,16 @@
+class Solution:
+    def hammingWeight(self, n: int) -> int:
+
+        count = 0
+        while n:
+            n = n & (n-1)
+            count+=1
+        return count
+
+        # return bin(n).count('1') # most fastest
+        
+        # return n.bit_count() # any int in pythan has this methodes. 
+        # WHT THE FUCK; but this is slower some how
+
+        # what interviewer expects
+        
