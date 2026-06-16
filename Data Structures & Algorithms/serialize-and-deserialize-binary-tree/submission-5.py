@@ -52,7 +52,7 @@ class Codec:
             node = q.popleft()
             
             if node:
-                # Keep your style: shift by +1000 to elegantly handle negative numbers
+                # shift by +1000 to elegantly handle negative numbers
                 val_to_encode = node.val + 1000
                 ans.append(f"{val_to_encode:011b}")
                 
@@ -60,7 +60,7 @@ class Codec:
                 q.append(node.left)
                 q.append(node.right)
             else:
-                # Keep your style: 2023 represents a NULL node marker
+                # 2023 represents a NULL node marker
                 ans.append(f"{2023:011b}")
         
         # Optimization: Strip trailing NULL markers so we don't save useless leaf-level Nones
@@ -89,7 +89,7 @@ class Codec:
             if idx < len(data):
                 value = int(data[idx:idx+11], 2)
                 idx += 11
-                if value != 2023:  # Check for your NULL marker first
+                if value != 2023:  # Check for NULL marker first
                     value -= 1000
                     lnode = TreeNode(val=value)
                     parent.left = lnode
@@ -99,7 +99,7 @@ class Codec:
             if idx < len(data):
                 value = int(data[idx:idx+11], 2)
                 idx += 11
-                if value != 2023:  # Check for your NULL marker first
+                if value != 2023:  # Check for  NULL marker first
                     value -= 1000
                     rnode = TreeNode(val=value)
                     parent.right = rnode
