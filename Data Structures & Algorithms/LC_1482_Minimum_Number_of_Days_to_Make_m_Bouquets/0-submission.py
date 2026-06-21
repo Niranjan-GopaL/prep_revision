@@ -24,7 +24,6 @@ class Solution:
         # => after subtracting ans from all the elem,
         # there should be [m distinct] sub-arrays with [k "0 or -ve" numbers]
         # we do binary search between mn and mx 
-        
 
         left=10**9
         right=0
@@ -46,3 +45,5 @@ class Solution:
                 left = mid + 1
 
         return left
+
+
